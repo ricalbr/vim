@@ -22,10 +22,9 @@ if &shell =~# 'fish$' && (v:version < 704 || v:version == 704 && !has('patch276'
 endif
 
 set tabstop=4 softtabstop=4 shiftwidth=4
-set smartindent
 set expandtab smarttab
 set incsearch ignorecase smartcase hlsearch
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 set list listchars=trail:·,tab:•-                       " use tab to navigate in list mode
 set fillchars+=vert:\▏,eob:\                            " requires a patched nerd font
@@ -46,8 +45,10 @@ set wildmenu
 set wildmode=full
 set completeopt=longest,menuone
 set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
+set omnifunc=syntaxcomplete#Complete
 
-set path+=.,**
+set path=.,**
+" set path& | let &path .= "**"
 set scrolljump=5
 set scrolloff=999                                       " keep cursor in the middle of the screen
 set sidescrolloff=5
@@ -59,7 +60,7 @@ set numberwidth=5
 
 " undo functionality
 if has('persistent_undo')
-  set undodir=$HOME/.vim/undo
+  set undodir=$HOME/.vimundo
   set undofile
 endif
 
@@ -70,33 +71,22 @@ endif
 " setlocal spell
 " set spelllang=en_gb
 
-set omnifunc=syntaxcomplete#Complete
-colorscheme dark
-
-" File Explorer
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 20
-let g:netrw_localrmdir='rm -rf'
-
-let g:NetrwIsOpen=0
-function! ToggleNetrw()
-    if g:NetrwIsOpen
-        let i = bufnr("$")
-        while (i >= 1)
-            if (getbufvar(i, "&filetype") == "netrw")
-                silent exe "bwipeout " . i
-            endif
-            let i-=1
-        endwhile
-        let g:NetrwIsOpen=0
-    else
-        let g:NetrwIsOpen=1
-        silent Lexplore
-    endif
+" colorscheme
+function! MyHighlights() abort
+    highlight Pmenu         cterm=NONE      gui=NONE        guibg=#00010a   guifg=white
+    highlight Comment       cterm=italic    gui=italic
+    highlight Search        cterm=NONE      gui=NONE        guibg=#b16286   guifg=#ebdbb2
+    highlight NonText       cterm=NONE      gui=NONE                        guifg=bg
+    highlight CursorLineNr  cterm=NONE      gui=bold
+    highlight SpellBad      cterm=NONE      gui=undercurl                   guifg=NONE
+    highlight SpellBad      cterm=undercurl,bold
 endfunction
+
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme dark call MyHighlights()
+augroup END
+colorscheme dark
 
 " MAPPINGS
 nnoremap <Space> <nop>
@@ -111,7 +101,6 @@ nnoremap <leader>t :tabfind *
 
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
-noremap <leader>n :call ToggleNetrw()<CR>
 nnoremap <leader>d :w !diff % -<CR>|
 nnoremap <leader>r :retab<CR>|
 
@@ -122,9 +111,9 @@ nnoremap <leader>%       :%s/\<<C-r>=expand("<cword>")<CR>\>/
 " better completion menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap        ,,      <C-n><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
-inoremap        ,:      <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
-inoremap        ,=      <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
+inoremap        ,,      <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
+inoremap        ,.      <C-n><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
+inoremap        ,-      <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 
 " " smooth grepping
 " command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr system(&grepprg . ' <args>')
@@ -180,23 +169,28 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " disable hl with 2 esc
-noremap <esc><esc> <esc>:noh<CR><esc>
+noremap <Esc><Esc> <Esc>:noh<CR><Esc>
 
-inoremap (<CR> (<CR>)<Esc>O
+" formatting parenthesis
 inoremap (;    (<CR>);<Esc>O
-inoremap (,    (<CR>),<Esc>O
+inoremap (<CR> (<CR>)<Esc>o
+inoremap ( ()<Left>
+inoremap (( (
+inoremap () ()
+
+inoremap [;    [<CR>];<Esc>O
+inoremap [<CR> [<CR>]<Esc>o
+inoremap [ []<Left>
+inoremap [[ [
+inoremap [] []
+
 inoremap {<CR> {<CR>}<Esc>O
 inoremap {;    {<CR>};<Esc>O
-inoremap {,    {<CR>},<Esc>O
-inoremap [<CR> [<CR>]<Esc>O
-inoremap [;    [<CR>];<Esc>O
-inoremap [,    [<CR>],<Esc>O
-" formatting parenthesis for programming
 inoremap { {}<Left>
-inoremap {<CR> {<CR>}<Esc>O
 inoremap {{ {
 inoremap {} {}
 
+" no arrow keys
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -221,19 +215,3 @@ function! OpenFileInPrevWindow()
     execute "edit " . cfile
 endfunction
 nmap <F8> :call OpenFileInPrevWindow()<CR>
-
-" " status line
-set laststatus=2
-set statusline=
-set statusline+=%#LineNr#
-set statusline+=\ \ \ %F
-set statusline+=\ %m%r
-set statusline+=%#LineNr#
-set statusline+=%=
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\ %m
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ \ \ %p%%
-set statusline+=\ (%l:%c)
-set statusline+=\ \ %m
