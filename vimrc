@@ -2,13 +2,6 @@
 "
 " @ricalbr
 
-" optional packages
-if has('packages')
-  packadd clang_complete
-  packadd python-syntax
-  packadd vim-cpp-modern
-endif
-
 filetype plugin indent on
 syntax on
 
