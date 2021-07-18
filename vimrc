@@ -48,9 +48,8 @@ set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
 set omnifunc=syntaxcomplete#Complete
 
 set path=.,**
-" set path& | let &path .= "**"
 set scrolljump=5
-set scrolloff=999                                       " keep cursor in the middle of the screen
+set scrolloff=999
 set sidescrolloff=5
 set lazyredraw
 set redrawtime=10000
@@ -171,30 +170,19 @@ nnoremap <C-l> <C-w>l
 " disable hl with 2 esc
 noremap <Esc><Esc> <Esc>:noh<CR><Esc>
 
-" formatting parenthesis
+" " formatting parenthesis
 inoremap (;    (<CR>);<Esc>O
 inoremap (<CR> (<CR>)<Esc>o
-inoremap ( ()<Left>
-inoremap (( (
-inoremap () ()
-
 inoremap [;    [<CR>];<Esc>O
 inoremap [<CR> [<CR>]<Esc>o
-inoremap [ []<Left>
-inoremap [[ [
-inoremap [] []
-
 inoremap {<CR> {<CR>}<Esc>O
 inoremap {;    {<CR>};<Esc>O
-inoremap { {}<Left>
-inoremap {{ {
-inoremap {} {}
 
 " no arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+nmap <up> <nop>
+nmap <down> <nop>
+nmap <left> <nop>
+nmap <right> <nop>
 
 imap <up> <nop>
 imap <down> <nop>

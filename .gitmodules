@@ -16,3 +16,9 @@
 [submodule "pack/plugins/start/vim-dispatch"]
 	path = pack/plugins/start/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
+[submodule "pack/plugins/start/pear-tree"]
+	path = pack/plugins/start/pear-tree
+	url = https://github.com/tmsvg/pear-tree
+[submodule "pack/plugins/start/auto-pairs"]
+	path = pack/plugins/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
