@@ -2,6 +2,13 @@
 "
 " @ricalbr
 
+" optional packages
+if has('packages')
+  packadd clang_complete
+  packadd python-syntax
+  packadd vim-cpp-modern
+endif
+
 filetype plugin indent on
 syntax on
 
@@ -114,8 +121,8 @@ inoremap        ,,      <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>
 inoremap        ,.      <C-n><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 inoremap        ,-      <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 
-" " smooth grepping
-" command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr system(&grepprg . ' <args>')
+" smooth grepping
+command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr system(&grepprg . ' <args>')
 
 " mapping C-S to save the file, in all the modes
 nnoremap <silent><C-s> :<c-u>update<CR>

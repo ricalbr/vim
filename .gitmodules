@@ -22,3 +22,21 @@
 [submodule "pack/plugins/start/auto-pairs"]
 	path = pack/plugins/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
+[submodule "pack/plugins/opt/vim-cpp-modern"]
+	path = pack/plugins/opt/vim-cpp-modern
+	url = https://github.com/bfrg/vim-cpp-modern
+[submodule "pack/plugins/opt/clang_complete"]
+	path = pack/plugins/opt/clang_complete
+	url = https://github.com/xavierd/clang_complete
+[submodule "pack/plugins/opt/python-syntax"]
+	path = pack/plugins/opt/python-syntax
+	url = https://github.com/vim-python/python-syntax
+[submodule "pack/plugins/start/vim-cpp-modern"]
+	path = pack/plugins/start/vim-cpp-modern
+	url = https://github.com/bfrg/vim-cpp-modern
+[submodule "pack/plugins/start/python-syntax"]
+	path = pack/plugins/start/python-syntax
+	url = https://github.com/vim-python/python-syntax
+[submodule "pack/plugins/start/clang_complete"]
+	path = pack/plugins/start/clang_complete
+	url = https://github.com/xavierd/clang_complete
