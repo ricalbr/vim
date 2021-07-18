@@ -1,3 +1,9 @@
+" LaTeX
+
+" tex specific text format
+set linebreak
+set fo-=t
+
 " set compiler
 compiler tex
 
@@ -9,4 +15,5 @@ nnoremap <F7> :w \| :Make % <CR>
 inoremap <F8> <Esc> :w \| :! pdflatex % <CR><CR>
 nnoremap <F8> :w \| :! pdflatex % <CR><CR>
 
+" open document
 noremap <leader>o :! zathura %<.pdf & <CR><CR>

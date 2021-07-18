@@ -3,15 +3,16 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/.vim
+cd ~/OneDrive/Script/G-Code
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 ~/.config/nvim/init.vim
+badd +0 prova.cpp
 argglobal
 %argdel
-edit ~/.config/nvim/init.vim
+$argadd prova.cpp
+edit prova.cpp
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -23,13 +24,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 76 - ((6 * winheight(0) + 13) / 27)
+let s:l = 3 - ((2 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 76
-normal! 0
-lcd ~/.config/nvim
+keepjumps 3
+normal! 027|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

@@ -1,1 +1,4 @@
-autocmd FileType gcode setlocal commentstring='\  %s
+" G-code"
+
+" set comment string
+setlocal commentstring='\ %s
