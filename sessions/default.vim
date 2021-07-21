@@ -3,16 +3,16 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/
+cd ~/.vim
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 Desktop/flm/Integrated-Photonics-Experiment-Suite/.git/HEAD
+badd +0 .git/COMMIT_EDITMSG
 argglobal
 %argdel
-$argadd Desktop/flm/Integrated-Photonics-Experiment-Suite/.git/HEAD
-edit Desktop/flm/Integrated-Photonics-Experiment-Suite/.git/HEAD
+$argadd .git/COMMIT_EDITMSG
+edit .git/COMMIT_EDITMSG
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -24,7 +24,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 10) / 21)
+let s:l = 1 - ((0 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt

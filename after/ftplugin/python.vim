@@ -1,6 +1,16 @@
-set shiftwidth=4 tabstop=4 softtabstop=4 autoindent smartindent
+" python
+
+" basic settings
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set autoindent smartindent
 set colorcolumn=80
 setlocal path=.,**
+set formatoptions=croql
+set fileformat=unix
+
+" include and define
 setlocal include=^\\s*\\(from\\\|import\\)\\s*\\zs\\(\\S\\+\\s\\{-}\\)*\\ze\\($\\\|\ as\\)
 setlocal define=^\\s*\\\\(def\\\|class\\)\\>
 setlocal includeexpr=PyInclude(v:fname)
@@ -18,3 +28,4 @@ function! PyInclude(fname)
   endif
   return substitute(l, '\.', '/', 'g') . '.py'
 endfunction
+

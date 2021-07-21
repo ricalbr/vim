@@ -6,3 +6,4 @@ set fo-=t
 
 " commment string
 setlocal commentstring=<!--\ %s\ -->
+
