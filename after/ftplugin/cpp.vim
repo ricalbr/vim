@@ -2,7 +2,8 @@
 
 " cpp comment string
 setlocal commentstring=//\ %s
-setlocal comments -=:// comments +=f://
+setlocal comments -=://
+setlocal comments +=f://
 
 " Build and execute
 noremap <buffer> <F7> :w <bar> !g++ -std=c++11 -Wall -m64 -g -I include % -o %:r <CR><CR>

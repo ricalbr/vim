@@ -4,9 +4,6 @@
 [submodule "pack/plugins/start/vim-surround"]
 	path = pack/plugins/start/vim-surround
 	url = http://github.com/tpope/vim-surround.git
-[submodule "pack/plugins/start/vim-colors"]
-	path = pack/plugins/start/vim-colors
-	url = http://github.com/ricalbr/vim-colors.git
 [submodule "pack/plugins/start/vim-fugitive"]
 	path = pack/plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
@@ -34,9 +31,15 @@
 [submodule "pack/plugins/start/vim-cpp-modern"]
 	path = pack/plugins/start/vim-cpp-modern
 	url = https://github.com/bfrg/vim-cpp-modern
-[submodule "pack/plugins/start/python-syntax"]
-	path = pack/plugins/start/python-syntax
-	url = https://github.com/vim-python/python-syntax
 [submodule "pack/plugins/start/clang_complete"]
 	path = pack/plugins/start/clang_complete
 	url = https://github.com/xavierd/clang_complete
+[submodule "pack/plugins/start/vimux"]
+	path = pack/plugins/start/vimux
+	url = https://github.com/preservim/vimux
+[submodule "pack/plugins/start/vim-tmux-navigator"]
+	path = pack/plugins/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "pack/plugins/start/vim-colors"]
+	path = pack/plugins/start/vim-colors
+	url = https://github.com/ricalbr/vim-colors

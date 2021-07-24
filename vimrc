@@ -7,7 +7,6 @@ syntax on
 
 set autoindent
 set backspace=indent,eol,start
-set complete-=i
 set hidden
 set noswapfile
 
@@ -27,7 +26,7 @@ set incsearch ignorecase smartcase hlsearch
 set clipboard+=unnamedplus
 set cindent
 set cinoptions=:.5s,>1s,p0,t0,(0,g2                     " :.5s = indent case statements 1/2 shiftwidth
-set cinwords=if,else,while,do,for,switch,case,class,try " Which keywords should indent
+set cinwords=if,else,while,do,for,switch,case,class,try " which keywords should indent
 
 set list listchars=trail:·,tab:•-                       " use tab to navigate in list mode
 set fillchars+=vert:\▏,eob:\                            " requires a patched nerd font
@@ -76,13 +75,13 @@ endif
 
 " colorscheme
 function! MyHighlights() abort
-  highlight Pmenu         cterm=NONE      gui=NONE        guibg=#00010A   guifg=white
-  highlight Search        cterm=NONE      gui=NONE        guibg=#B16286   guifg=#EBDBB2
-  highlight NonText       cterm=NONE      gui=NONE                        guifg=bg
-  highlight SpellBad      cterm=NONE      gui=undercurl                   guifg=NONE
-  highlight Comment       cterm=italic    gui=italic
-  highlight CursorLineNr  cterm=NONE      gui=bold
-  highlight SpellBad      cterm=undercurl,bold
+    highlight Pmenu        cterm=NONE           gui=NONE      guibg=#00010A guifg=white
+    highlight Search       cterm=NONE           gui=NONE      guibg=#B16286 guifg=#EBDBB2
+    highlight NonText      cterm=NONE           gui=NONE      guifg=bg
+    highlight SpellBad     cterm=NONE           gui=undercurl guifg=NONE
+    highlight Comment      cterm=italic         gui=italic
+    highlight CursorLineNr cterm=NONE           gui=bold
+    highlight SpellBad     cterm=undercurl,bold
 endfunction
 
 augroup MyColors
@@ -91,12 +90,23 @@ augroup MyColors
 augroup END
 colorscheme dark
 
-autocmd BufReadPost * call functions#LastPosition()
+augroup Op
+  autocmd!
+  autocmd BufReadPost * call autocmdfunctions#LastPosition()
+  autocmd BufWritePre * call autocmdfunctions#RmvTrailingSpaces()
+augroup END
 
 " overload q and w command
-command! Q q
-command! W w
+command! Q  q
+command! W  w
 command! Wq wq
+
+" smooth grepping
+command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr system(&grepprg . ' <args>')
+
+" write file with sudo
+cnoreabbrev w!! w !sudo tee > /dev/null %|
+
 
 " -- MAPPINGS -- "
 nnoremap <Space> <nop>
@@ -109,8 +119,8 @@ nnoremap <leader>s :sfind *
 nnoremap <leader>v :vert sfind *
 nnoremap <leader>t :tabfind *
 
-nmap <Tab> :bnext<CR>
-nmap <S-Tab> :bprevious<CR>
+nmap     <Tab>     :bnext<CR>
+nmap     <S-Tab>   :bprevious<CR>
 nnoremap <leader>d :w !diff % -<CR>
 nnoremap <leader>r :retab<CR>
 
@@ -129,16 +139,10 @@ inoremap        ,,      <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>
 inoremap        ,.      <C-n><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 inoremap        ,-      <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 
-" smooth grepping
-command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr system(&grepprg . ' <args>')
-
 " mapping C-S to save the file, in all the modes
-nnoremap <silent><C-s> :<c-u>update<CR>
-vnoremap <silent><C-s> <c-c>:update<CR>gv
-inoremap <silent><C-s> <c-o>:update<CR><Esc>
-
-" write file with sudo
-cnoreabbrev w!! w !sudo tee > /dev/null %|
+nnoremap <silent><C-s> :<C-u>update<CR>
+vnoremap <silent><C-s> <C-c>:update<CR>gv
+inoremap <silent><C-s> <C-o>:update<CR><Esc>
 
 " join lines keepin the cursor position
 nnoremap <silent> J :let p=getpos('.')<bar>join<bar>call setpos('.', p)<cr>
@@ -150,12 +154,6 @@ nmap k gk
 " retain visual selection after `>` or `<`
 vnoremap > >gv
 vnoremap < <gv
-
-" horizontal navigation
-nnoremap <S-h> g^
-nnoremap <S-l> g$
-vnoremap <S-h> g^
-vnoremap <S-l> g$
 
 " move visual selection
 vnoremap J :m '>+1<CR>gv=gv
@@ -176,22 +174,17 @@ nnoremap <C-l> <C-w>l
 noremap <Esc><Esc> <Esc>:noh<CR><Esc>
 
 " " formatting parenthesis
-inoremap (;    (<CR>);<Esc>O
-inoremap (<CR> (<CR>)<Esc>o
-inoremap [;    [<CR>];<Esc>O
-inoremap [<CR> [<CR>]<Esc>o
+inoremap (<CR> (<CR>)<Esc>O
+inoremap [<CR> [<CR>]<Esc>O
 inoremap {<CR> {<CR>}<Esc>O
-inoremap {;    {<CR>};<Esc>O
 
 " no arrow keys
-nmap <up> <nop>
-nmap <down> <nop>
-nmap <left> <nop>
-nmap <right> <nop>
+nnoremap <Down>  <NOP>
+nnoremap <Up>    <NOP>
+nnoremap <Left>  <NOP>
+nnoremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
 
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
-nmap <F8> :call functions#OpenFileInPrevWindow()<CR>

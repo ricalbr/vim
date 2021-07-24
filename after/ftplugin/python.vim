@@ -4,9 +4,6 @@
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
-set autoindent smartindent
-set colorcolumn=80
-setlocal path=.,**
 set formatoptions=croql
 set fileformat=unix
 

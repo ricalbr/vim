@@ -6,5 +6,3 @@ augroup Vimrc
   autocmd! bufwritepost vimrc source %
 augroup END
 
-au FileType help wincmd L                               " open help in vertical split
-au BufWritePre * :%s/\s\+$//e                           " remove trailing whitespaces before saving
