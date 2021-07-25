@@ -1,5 +1,7 @@
 " c++
 
+packadd vim-cpp-modern
+
 " cpp comment string
 setlocal commentstring=//\ %s
 setlocal comments -=://

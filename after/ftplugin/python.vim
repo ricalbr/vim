@@ -1,5 +1,8 @@
 " python
 
+" add filetype specific plugins
+packadd python-syntax
+
 " basic settings
 set shiftwidth=4
 set tabstop=4
