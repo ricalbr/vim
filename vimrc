@@ -90,7 +90,7 @@ augroup MyColors
 augroup END
 colorscheme dark
 
-augroup Op
+augroup Operations
   autocmd!
   autocmd BufReadPost * call autocmdfunctions#LastPosition()
   autocmd BufWritePre * call autocmdfunctions#RmvTrailingSpaces()

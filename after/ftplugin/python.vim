@@ -10,6 +10,17 @@ set softtabstop=4
 set formatoptions=croql
 set fileformat=unix
 
+" compiler settings
+" compiler python
+compiler pyunit
+set makeprg=python3\ %
+
+augroup Linting
+    autocmd!
+    autocmd BufWritePost *.py silent make! <afile> | silent redraw!
+    autocmd QuickFixCmdPost [^l]* cwindow
+augroup END
+
 " include and define
 setlocal include=^\\s*\\(from\\\|import\\)\\s*\\zs\\(\\S\\+\\s\\{-}\\)*\\ze\\($\\\|\ as\\)
 setlocal define=^\\s*\\\\(def\\\|class\\)\\>
