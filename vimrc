@@ -64,8 +64,8 @@ set numberwidth=5
 
 " undo functionality
 if has('persistent_undo')
-  set undodir=$HOME/.vimundo
-  set undofile
+    set undodir=$HOME/.vimundo
+    set undofile
 endif
 
 " encoding and spelling
@@ -102,10 +102,10 @@ command! W  w
 command! Wq wq
 
 " smooth grepping
-command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr system(&grepprg . ' <args>')
+" command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr system(&grepprg . ' <args>')
 
 " write file with sudo
-cnoreabbrev w!! w !sudo tee > /dev/null %|
+cnoreabbrev w!! w !sudo tee > /dev/null %<CR>
 
 
 " -- MAPPINGS -- "
