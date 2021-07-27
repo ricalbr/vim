@@ -5,5 +5,3 @@ function! align#Align()
     '<,'>!column -t|sed 's/  \(\S\)/ \1/g'
     normal gv=
 endfunction
-
-xnoremap <silent> al :<C-u>silent call align#Align()<CR>

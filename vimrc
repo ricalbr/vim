@@ -56,6 +56,7 @@ set path=.,**
 set scrolljump=5
 set scrolloff=999
 set sidescrolloff=5
+set noshowmode
 set lazyredraw
 set redrawtime=10000
 set synmaxcol=0
@@ -188,3 +189,5 @@ inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
+xnoremap <silent>al   :<C-u>silent call align#Align()<CR>
+nnoremap <silent><F8> :call opener#OpenFileInPrevWindow()<CR>

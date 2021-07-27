@@ -4,5 +4,3 @@ function! opener#OpenFileInPrevWindow() abort
     wincmd p
     execute "edit " . cfile
 endfunction
-
-nmap <F8> :call opener#OpenFileInPrevWindow()<CR>
