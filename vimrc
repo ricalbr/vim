@@ -160,6 +160,16 @@ vnoremap < <gv
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+" argslist navigation
+nnoremap [a :previous<CR>
+nnoremap ]a :next<CR>
+nnoremap [A :first<CR>
+nnoremap ]A :last<CR>
+
+" quickfix list navigation
+nnoremap [q :cp<CR>
+nnoremap ]q :cn<CR>
+
 " switch between splits using ctrl + {h,j,k,l}
 inoremap <C-h> <C-\><C-N><C-w>h
 inoremap <C-j> <C-\><C-N><C-w>j
@@ -171,8 +181,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" " disable hl with 2 esc
-" noremap <Esc><Esc> <Esc>:noh<CR><Esc>
+" window management
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 6/5)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 5/6)<CR>
 
 " " formatting parenthesis
 inoremap (<CR> (<CR>)<Esc>O
@@ -189,5 +200,13 @@ inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
-xnoremap <silent>al   :<C-u>silent call align#Align()<CR>
-nnoremap <silent><F8> :call opener#OpenFileInPrevWindow()<CR>
+" autoload functions mappings
+xnoremap <silent>al     :<C-u>silent call align#Align()<CR>
+nnoremap <F8>           :call opener#OpenFileInPrevWindow()<CR>
+cnoremap <expr> <CR>    cmdline#AutoComplete()
+
+" access file data
+cnoremap \fp <C-R>=expand("%:p:h")<CR>
+inoremap \fp <C-R>=expand("%:p:h")<CR>
+cnoremap \fn <C-R>=expand("%:t:r")<CR>
+inoremap \fn <C-R>=expand("%:t:r")<CR>
