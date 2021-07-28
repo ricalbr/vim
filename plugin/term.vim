@@ -1,4 +1,6 @@
 " terminal settings
+
+" terminal layout
 augroup Term
   autocmd!
   " close the terminal buffer with <C-d>
@@ -6,7 +8,7 @@ augroup Term
   autocmd! TerminalOpen * set nonu nornu
 augroup END
 
-
+" mappings
 tnoremap <Esc> <C-\><C-N>
 tnoremap <C-h> <C-\><C-N><C-w>h
 tnoremap <C-j> <C-\><C-N><C-w>j
