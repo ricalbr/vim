@@ -9,7 +9,7 @@ let g:currentmode={
       \ 'R'  : 'r',
       \ 'Rv' : 'rv',
       \ 'c'  : 'c',
-      \ 't'  : 'f',
+      \ 't'  : 't',
       \}
 
 hi InsertColor  ctermbg=darkgreen ctermfg=black
@@ -27,7 +27,7 @@ set statusline+=%#VisualColor#%{(g:currentmode[mode()]=='v')?'\ \ VISUAL\ ':''}
 set statusline+=%#VisualColor#%{(g:currentmode[mode()]=='vl')?'\ \ V-LINE\ ':''}
 set statusline+=%#VisualColor#%{(g:currentmode[mode()]=='vb')?'\ \ V-BLOCK\ ':''}
 set statusline+=%#NormalColor#%{(g:currentmode[mode()]=='c')?'\ \ COMMAND\ ':''}
-set statusline+=%#NormalColor#%{(g:currentmode[mode()]=='f')?'\ \ FINDER\ ':''}
+set statusline+=%#NormalColor#%{(g:currentmode[mode()]=='t')?'\ \ TERMINAL\ ':''}
 set statusline+=%#LineNr#
 set statusline+=%#LineNr#
 set statusline+=\ %f
