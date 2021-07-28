@@ -16,3 +16,6 @@
 [submodule "pack/plugins/opt/python-syntax"]
 	path = pack/plugins/opt/python-syntax
 	url = https://github.com/vim-python/python-syntax
+[submodule "pack/plugins/start/delimitMate"]
+	path = pack/plugins/start/delimitMate
+	url = https://github.com/Raimondi/delimitMate

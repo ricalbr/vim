@@ -108,7 +108,6 @@ command! Wq wq
 " write file with sudo
 cnoreabbrev w!! w !sudo tee > /dev/null %<CR>
 
-
 " -- MAPPINGS -- "
 nnoremap <Space> <nop>
 let mapleader="\<Space>"
@@ -186,9 +185,9 @@ nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 6/5)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 5/6)<CR>
 
 " " formatting parenthesis
-inoremap (<CR> (<CR>)<Esc>O
-inoremap [<CR> [<CR>]<Esc>O
-inoremap {<CR> {<CR>}<Esc>O
+" inoremap (<CR> (<CR>)<Esc>O
+" inoremap [<CR> [<CR>]<Esc>O
+" inoremap {<CR> {<CR>}<Esc>O
 
 " no arrow keys
 nnoremap <Down>  <NOP>
