@@ -23,7 +23,7 @@ endif
 set tabstop=4 softtabstop=4 shiftwidth=4
 set expandtab smarttab
 set incsearch ignorecase smartcase hlsearch
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 set cindent
 set cinoptions=:.5s,>1s,p0,t0,(0,g2                     " :.5s = indent case statements 1/2 shiftwidth
 set cinwords=if,else,while,do,for,switch,case,class,try " which keywords should indent
@@ -146,6 +146,9 @@ inoremap <silent><C-s> <C-o>:update<CR><Esc>
 
 " join lines keepin the cursor position
 nnoremap <silent> J :let p=getpos('.')<bar>join<bar>call setpos('.', p)<cr>
+
+" capital Y standard behaviour
+nnoremap Y y$
 
 " move vertically by visual line (don't skip wrapped lines)
 nmap j gj
