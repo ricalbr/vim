@@ -19,15 +19,15 @@ hi VisualColor  ctermbg=darkblue  ctermfg=black
 
 set laststatus=2
 set statusline=
-set statusline+=%#NormalColor#%{(g:currentmode[mode()]=='n')?'\ \ NORMAL\ ':''}
+set statusline+=%#LineNr#%{(g:currentmode[mode()]=='n')?'\ \ NORMAL\ ':''}
 set statusline+=%#InsertColor#%{(g:currentmode[mode()]=='i')?'\ \ INSERT\ ':''}
 set statusline+=%#ReplaceColor#%{(g:currentmode[mode()]=='r')?'\ \ REPLACE\ ':''}
 set statusline+=%#ReplaceColor#%{(g:currentmode[mode()]=='rv')?'\ \ V-REPLACE\ ':''}
 set statusline+=%#VisualColor#%{(g:currentmode[mode()]=='v')?'\ \ VISUAL\ ':''}
 set statusline+=%#VisualColor#%{(g:currentmode[mode()]=='vl')?'\ \ V-LINE\ ':''}
 set statusline+=%#VisualColor#%{(g:currentmode[mode()]=='vb')?'\ \ V-BLOCK\ ':''}
-set statusline+=%#NormalColor#%{(g:currentmode[mode()]=='c')?'\ \ COMMAND\ ':''}
-set statusline+=%#NormalColor#%{(g:currentmode[mode()]=='t')?'\ \ TERMINAL\ ':''}
+set statusline+=%#LineNr#%{(g:currentmode[mode()]=='c')?'\ \ COMMAND\ ':''}
+set statusline+=%#LineNr#%{(g:currentmode[mode()]=='t')?'\ \ TERMINAL\ ':''}
 set statusline+=%#LineNr#
 set statusline+=%#LineNr#
 set statusline+=\ %f
