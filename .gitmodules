@@ -19,3 +19,6 @@
 [submodule "pack/plugins/start/delimitMate"]
 	path = pack/plugins/start/delimitMate
 	url = https://github.com/Raimondi/delimitMate
+[submodule "pack/plugins/start/clever-f.vim"]
+	path = pack/plugins/start/clever-f.vim
+	url = https://github.com/rhysd/clever-f.vim
