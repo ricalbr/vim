@@ -2,13 +2,18 @@
 
 " add filetype specific plugins
 packadd python-syntax
+let g:python_highlight_all = 1
 
 " basic settings
-set shiftwidth=4
 set tabstop=4
 set softtabstop=4
+set shiftwidth=4
 set formatoptions=croql
+set expandtab
+set autoindent
+set encoding=utf-8
 set fileformat=unix
+set textwidth=79
 
 " compiler settings
 compiler pyunit
