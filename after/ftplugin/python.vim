@@ -11,7 +11,6 @@ set formatoptions=croql
 set fileformat=unix
 
 " compiler settings
-" compiler python
 compiler pyunit
 set makeprg=python3\ %
 
@@ -40,3 +39,6 @@ function! PyInclude(fname)
   return substitute(l, '\.', '/', 'g') . '.py'
 endfunction
 
+" mappings
+nnoremap <F7> :update <CR>:!clear; python % <CR>
+inoremap <F7> <ESC> :update <CR>:!clear; python % <CR>
