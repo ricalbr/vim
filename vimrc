@@ -187,11 +187,6 @@ nnoremap <C-l> <C-w>l
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 6/5)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 5/6)<CR>
 
-" " formatting parenthesis
-" inoremap (<CR> (<CR>)<Esc>O
-" inoremap [<CR> [<CR>]<Esc>O
-" inoremap {<CR> {<CR>}<Esc>O
-
 " no arrow keys
 nnoremap <Down>  <NOP>
 nnoremap <Up>    <NOP>
@@ -206,9 +201,11 @@ inoremap <Right> <NOP>
 xnoremap <silent>al     :<C-u>silent call align#Align()<CR>
 nnoremap <F8>           :call opener#OpenFileInPrevWindow()<CR>
 cnoremap <expr> <CR>    cmdline#AutoComplete()
+nnoremap <silent> <expr> <Leader><Space> wordshl#Highlighting()
 
 " access file data
 cnoremap \fp <C-R>=expand("%:p:h")<CR>
 inoremap \fp <C-R>=expand("%:p:h")<CR>
 cnoremap \fn <C-R>=expand("%:t:r")<CR>
 inoremap \fn <C-R>=expand("%:t:r")<CR>
+
