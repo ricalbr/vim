@@ -47,7 +47,7 @@ set statusline+=%0*\ %{ModeCurrent()}\                      " current mode
 set statusline+=%#LineNr#                                   " transparent line
 set statusline+=\ %<%F%m%r%h%w\ |                           " file path, modified, readonly, helpfile, preview
 set statusline+=%=                                          " right side separator
-set statusline+=%m\ %y\ |                                   " modifiable and filetype
+set statusline+=%y\ |                                       " filetype
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}  " encoding
 set statusline+=%#LineNr#\ %5p%%\ \ (%l:%3c)\ |            " percentage (row:column) numbers
 set statusline+=%0*\ %n\                                    " buffer number
