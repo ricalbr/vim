@@ -47,7 +47,7 @@ syntax match gcHashtag "#\<UNDEF\>"
 syntax keyword gcMath ABS ACOS ASIN ATAN COS EXP SIN SQRT TAN
 syntax match gcOperator "[\+|\-|\*|\/|=|>|<|>=|<=|&|\||%|!|\^|\(|\)]"
 
-syntax keyword gcIter DFS ELSE ELSEIF END ENDDFS ENDRPT FARGOTO FARJUMP FOR GOTO IF JUMP NEXT REPEAT RPT THEN TO PROGRAM
+syntax keyword gcIter DFS ELSE ELSEIF END ENDDFS ENDIF ENDRPT FARGOTO FARJUMP FOR GOTO IF JUMP NEXT REPEAT RPT THEN TO PROGRAM
 
 syntax keyword gcStatus ON OFF RESET WAIT INPOS NOWAIT
 
