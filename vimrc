@@ -62,6 +62,7 @@ set redrawtime=10000
 set synmaxcol=0
 set number relativenumber
 set numberwidth=5
+set signcolumn=yes
 
 " undo functionality
 if has('persistent_undo')
