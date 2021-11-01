@@ -28,7 +28,7 @@ augroup END
 " include and define
 setlocal include=^\\s*\\(from\\\|import\\)\\s*\\zs\\(\\S\\+\\s\\{-}\\)*\\ze\\($\\\|\ as\\)
 setlocal define=^\\s*\\\\(def\\\|class\\)\\>
-setlocal includeexpr=PyInclude(v:fname)
+" setlocal includeexpr=PyInclude(v:fname)
 
 function! PyInclude(fname)
   let parts = split(a:fname, ' import ')
