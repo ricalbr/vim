@@ -51,6 +51,8 @@ syntax keyword gcIter DFS ELSE ELSEIF END ENDDFS ENDIF ENDRPT FARGOTO FARJUMP FO
 
 syntax keyword gcStatus ON OFF RESET WAIT INPOS NOWAIT
 
+syntax keyword gcError ERROR TASKERROR
+
 syntax match gcXAxis "\<[X]\>"
 syntax match gcXAxis "\<[X]-\?\d\+\>"
 syntax match gcXAxis "\<[X]-\?\.\d\+\>"
@@ -117,5 +119,6 @@ highlight def link gcOperator gcodeOperator
 highlight def link gcMath gcodeOperator
 highlight def link gcHashtag gcodeHashtag
 highlight def link gcString gcodeString
+highlight def link gcError gcodeError
 
 let b:current_syntax = "gcode"
