@@ -20,6 +20,8 @@ list of plugins:
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 - [vim-repeat](https://github.com/tpope/vim-repeat)
 - [vim-surround](https://github.com/tpope/vim-surround)
+- [vim-snippets](https://github.com/honza/vim-snippets)
+- [UltiSnips](https://github.com/SirVer/ultisnips)
 
 ### bugs
 open a bug [here](https://github.com/ricalbr/vim/issues).
