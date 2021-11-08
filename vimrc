@@ -77,13 +77,13 @@ endif
 
 " colorscheme
 function! MyHighlights() abort
-    highlight Pmenu        cterm=NONE           gui=NONE      guibg=#00010A guifg=white
-    highlight Search       cterm=NONE           gui=NONE      guibg=#B16286 guifg=#EBDBB2
-    highlight NonText      cterm=NONE           gui=NONE      guifg=bg
-    highlight SpellBad     cterm=NONE           gui=undercurl guifg=NONE
-    highlight Comment      cterm=italic         gui=italic
-    highlight CursorLineNr cterm=NONE           gui=bold
-    highlight SpellBad     cterm=undercurl,bold
+  highlight Pmenu        cterm=NONE           gui=NONE      guibg=#00010A guifg=white
+  highlight Search       cterm=NONE           gui=NONE      guibg=#B16286 guifg=#EBDBB2
+  highlight NonText      cterm=NONE           gui=NONE      guifg=bg
+  highlight SpellBad     cterm=NONE           gui=undercurl guifg=NONE
+  highlight Comment      cterm=italic         gui=italic
+  highlight CursorLineNr cterm=NONE           gui=bold
+  highlight SpellBad     cterm=undercurl,bold
 endfunction
 
 augroup MyColors
