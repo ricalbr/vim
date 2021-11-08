@@ -202,7 +202,7 @@ inoremap <Right> <NOP>
 xnoremap <silent>al     :<C-u>silent call align#Align()<CR>
 nnoremap <F8>           :call opener#OpenFileInPrevWindow()<CR>
 cnoremap <expr> <CR>    cmdline#AutoComplete()
-nnoremap <silent> <expr> <Leader><Space> wordshl#Highlighting()
+nnoremap <silent> <expr> <Leader>h wordshl#Highlighting()
 
 " access file data
 cnoremap \fp <C-R>=expand("%:p:h")<CR>
