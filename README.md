@@ -1,4 +1,4 @@
-# vim
+# ![vim](https://www.vim.org/images/vim32x32.gif) vim setup
 
 minimal configuration for the vim editor.
 
