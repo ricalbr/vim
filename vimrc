@@ -2,6 +2,12 @@
 "
 " @ricalbr
 
+" SETTING ENVIRONMENT {{{
+let $RTP=split(&runtimepath, ',')[0]
+let $VIMRC="$HOME/.vim/vimrc"
+" }}}
+
+" BASIC SETTINGS {{{
 filetype plugin indent on
 syntax on
 
@@ -104,12 +110,13 @@ command! W  w
 command! Wq wq
 
 " smooth grepping
-" command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr system(&grepprg . ' <args>')
+command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr system(&grepprg . ' <args>')
 
 " write file with sudo
 cnoreabbrev w!! w !sudo tee > /dev/null %<CR>
+" }}}
 
-" -- MAPPINGS -- "
+" MAPPINGS {{{
 nnoremap <Space> <nop>
 let mapleader="\<Space>"
 nmap \ :bd<CR>
@@ -130,12 +137,10 @@ nnoremap <leader><Space> :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <leader>%       :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
 " better completion menu
-"   menu navigation with <Tab> and <S-Tab>
+"   menu navigation with <C-n> and <C-p>
 "   ,, trigger line completion
 "   ,. trigger keyword completion
 "   ,- trigger filename compeltion
-inoremap <expr> <Tab>   pumvisible() ? "\<C-N>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
 inoremap        ,,      <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 inoremap        ,.      <C-n><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 inoremap        ,-      <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
@@ -209,4 +214,19 @@ cnoremap \fp <C-R>=expand("%:p:h")<CR>
 inoremap \fp <C-R>=expand("%:p:h")<CR>
 cnoremap \fn <C-R>=expand("%:t:r")<CR>
 inoremap \fn <C-R>=expand("%:t:r")<CR>
+" }}}
 
+
+" ULTISNIP OPTIONS {{{
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
+" Use carriage returns as a surround character
+let g:surround_13 = "\n\t\r\n"
+
+" Sometimes UltiSnips does not auto reload snippets
+cnoreabbrev resnip call UltiSnips#RefreshSnippets()
+nnoremap <leader>u :UltiSnipsEdit!<CR>
+" }}}
