@@ -9,3 +9,6 @@ Sessionx.vim
 
 # Auto-generated tag files
 tags
+
+# Folds
+view/**

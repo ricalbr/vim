@@ -94,14 +94,7 @@ cnoreabbrev w!! w !sudo tee > /dev/null %<CR>
 " }}}
 
 " AUTOCOMMANDS {{{
-" remember folds
-augroup rememberFold
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
-
-" colorscheme
+" set colorscheme
 function! MyHighlights() abort
   highlight Pmenu        cterm=NONE           gui=NONE      guibg=#00010A guifg=white
   highlight Search       cterm=NONE           gui=NONE      guibg=#B16286 guifg=#EBDBB2
@@ -118,6 +111,14 @@ augroup MyColors
 augroup END
 colorscheme dark
 
+" remember folds
+augroup rememberFold
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
+
+" remember cursor position
 augroup Operations
   autocmd!
   autocmd BufReadPost * call autocmdfunctions#LastPosition()
