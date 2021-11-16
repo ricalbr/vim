@@ -81,6 +81,26 @@ if &encoding ==# 'latin1' && has('gui_running')
   set encoding=utf-8
 endif
 
+" overload q and w command
+command! Q  q
+command! W  w
+command! Wq wq
+
+" smooth grepping
+command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr system(&grepprg . ' <args>')
+
+" write file with sudo
+cnoreabbrev w!! w !sudo tee > /dev/null %<CR>
+" }}}
+
+" AUTOCOMMANDS {{{
+" remember folds
+augroup rememberFold
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
+
 " colorscheme
 function! MyHighlights() abort
   highlight Pmenu        cterm=NONE           gui=NONE      guibg=#00010A guifg=white
@@ -103,17 +123,6 @@ augroup Operations
   autocmd BufReadPost * call autocmdfunctions#LastPosition()
   autocmd BufWritePre * call autocmdfunctions#RmvTrailingSpaces()
 augroup END
-
-" overload q and w command
-command! Q  q
-command! W  w
-command! Wq wq
-
-" smooth grepping
-command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr system(&grepprg . ' <args>')
-
-" write file with sudo
-cnoreabbrev w!! w !sudo tee > /dev/null %<CR>
 " }}}
 
 " MAPPINGS {{{
@@ -215,7 +224,6 @@ inoremap \fp <C-R>=expand("%:p:h")<CR>
 cnoremap \fn <C-R>=expand("%:t:r")<CR>
 inoremap \fn <C-R>=expand("%:t:r")<CR>
 " }}}
-
 
 " ULTISNIP OPTIONS {{{
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
