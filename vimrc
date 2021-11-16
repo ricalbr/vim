@@ -96,13 +96,13 @@ cnoreabbrev w!! w !sudo tee > /dev/null %<CR>
 " AUTOCOMMANDS {{{
 " set colorscheme
 function! MyHighlights() abort
-  highlight Pmenu        cterm=NONE           gui=NONE      guibg=#00010A guifg=white
-  highlight Search       cterm=NONE           gui=NONE      guibg=#B16286 guifg=#EBDBB2
-  highlight NonText      cterm=NONE           gui=NONE      guifg=bg
-  highlight SpellBad     cterm=NONE           gui=undercurl guifg=NONE
-  highlight Comment      cterm=italic         gui=italic
-  highlight CursorLineNr cterm=NONE           gui=bold
-  highlight SpellBad     cterm=undercurl,bold
+    highlight Pmenu           cterm=NONE           gui=NONE      guibg=#00010A guifg=white
+    highlight Search          cterm=NONE           gui=NONE      guibg=#B16286 guifg=#EBDBB2
+    highlight NonText         cterm=NONE           gui=NONE      guifg=bg
+    highlight SpellBad        cterm=NONE           gui=undercurl guifg=NONE
+    highlight Comment         cterm=italic         gui=italic
+    highlight CursorLineNr    cterm=NONE           gui=bold
+    highlight SpellBad        cterm=undercurl,bold
 endfunction
 
 augroup MyColors
@@ -226,7 +226,9 @@ cnoremap \fn <C-R>=expand("%:t:r")<CR>
 inoremap \fn <C-R>=expand("%:t:r")<CR>
 " }}}
 
-" ULTISNIP OPTIONS {{{
+" PLUGIN-SPECIFIC OPTIONS {{{
+
+" UltiSnips
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
@@ -238,4 +240,16 @@ let g:surround_13 = "\n\t\r\n"
 " Sometimes UltiSnips does not auto reload snippets
 cnoreabbrev resnip call UltiSnips#RefreshSnippets()
 nnoremap <leader>u :UltiSnipsEdit!<CR>
+
+" GitGutter
+set updatetime=250
+
+" change signs and colors
+let g:gitgutter_sign_added = '▐'
+let g:gitgutter_sign_modified = '▐'
+let g:gitgutter_sign_removed = '▐'
+
+highlight GitGutterAdd    ctermfg=22
+highlight GitGutterChange ctermfg=3
+highlight GitGutterDelete ctermfg=196
 " }}}
