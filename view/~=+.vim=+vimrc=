@@ -6,10 +6,10 @@ imap <buffer> <silent> <C-G>g <Plug>delimitMateJumpMany
 imap <buffer> <S-Tab> <Plug>delimitMateS-Tab
 imap <buffer> <S-BS> <Plug>delimitMateS-BS
 imap <buffer> <BS> <Plug>delimitMateBS
-xmap <buffer>  hs <Plug>(GitGutterStageHunk)
-nmap <buffer>  hs <Plug>(GitGutterStageHunk)
-nmap <buffer>  hu <Plug>(GitGutterUndoHunk)
 nmap <buffer>  hp <Plug>(GitGutterPreviewHunk)
+nmap <buffer>  hu <Plug>(GitGutterUndoHunk)
+nmap <buffer>  hs <Plug>(GitGutterStageHunk)
+xmap <buffer>  hs <Plug>(GitGutterStageHunk)
 nmap <buffer> [c <Plug>(GitGutterPrevHunk)
 vnoremap <buffer> <silent> [" :exe "normal! gv"|call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
 nnoremap <buffer> <silent> [" :call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
@@ -24,10 +24,10 @@ vnoremap <buffer> <silent> ][ m':exe "normal! gv"|call search('^\s*end\(f\%[u
 nnoremap <buffer> <silent> ][ m':call search('^\s*end\(f\%[unction]\|def\)\>', "W")
 vnoremap <buffer> <silent> ]] m':exe "normal! gv"|call search('^\s*\(fu\%[nction]\|def\)\>', "W")
 nnoremap <buffer> <silent> ]] m':call search('^\s*\(fu\%[nction]\|def\)\>', "W")
-omap <buffer> ac <Plug>(GitGutterTextObjectOuterPending)
 xmap <buffer> ac <Plug>(GitGutterTextObjectOuterVisual)
-omap <buffer> ic <Plug>(GitGutterTextObjectInnerPending)
+omap <buffer> ac <Plug>(GitGutterTextObjectOuterPending)
 xmap <buffer> ic <Plug>(GitGutterTextObjectInnerVisual)
+omap <buffer> ic <Plug>(GitGutterTextObjectInnerPending)
 imap <buffer> <silent> g <Plug>delimitMateJumpMany
 imap <buffer> " <Plug>delimitMate"
 imap <buffer> ' <Plug>delimitMate'
@@ -168,15 +168,20 @@ setlocal wrapmargin=0
 silent! normal! zE
 5,8fold
 10,94fold
+10,94fold
 96,127fold
 129,227fold
 229,241fold
 let &fdl = &fdl
-let s:l = 121 - ((120 * winheight(0) + 14) / 28)
+10
+normal! zo
+96
+normal! zo
+let s:l = 97 - ((96 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 121
+keepjumps 97
 normal! 0
 let &g:so = s:so_save | let &g:siso = s:siso_save
 nohlsearch
