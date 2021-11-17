@@ -229,7 +229,7 @@ inoremap \fn <C-R>=expand("%:t:r")<CR>
 " PLUGIN-SPECIFIC OPTIONS {{{
 
 " UltiSnips
-let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+let g:UltiSnipsSnippetDirectories=["ultisnips"]
 let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
