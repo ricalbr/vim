@@ -5,6 +5,7 @@ Sessionx.vim
 
 # Temporary
 .netrwhist
+.vimundo
 *~
 
 # Auto-generated tag files

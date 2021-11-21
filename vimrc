@@ -72,7 +72,7 @@ set signcolumn=yes
 
 " undo functionality
 if has('persistent_undo')
-    set undodir=$HOME/.vimundo
+    set undodir=$HOME/.vim/.vimundo
     set undofile
 endif
 
