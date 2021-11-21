@@ -5,6 +5,11 @@
 " SETTING ENVIRONMENT {{{
 let $RTP=split(&runtimepath, ',')[0]
 let $VIMRC="$HOME/.vim/vimrc"
+
+set directory=$XDG_CACHE_HOME/vim,~/,/tmp
+set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
+set undodir=$HOME/.vim/.vimundo
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
 " }}}
 
 " BASIC SETTINGS {{{
@@ -72,7 +77,6 @@ set signcolumn=yes
 
 " undo functionality
 if has('persistent_undo')
-    set undodir=$HOME/.vim/.vimundo
     set undofile
 endif
 
