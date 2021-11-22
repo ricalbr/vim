@@ -1,6 +1,6 @@
-# ![vim](https://www.vim.org/images/vim32x32.gif) vim setup
+# ![vim](https://www.vim.org/images/vim32x32.gif) vim config
 
-minimal configuration for the vim editor.
+configuration for vim text editor.
 
 ### install
 in terminal:
