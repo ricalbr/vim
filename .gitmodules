@@ -37,3 +37,9 @@
 [submodule "pack/plugins/start/vim-capslock"]
 	path = pack/plugins/start/vim-capslock
 	url = https://github.com/tpope/vim-capslock
+[submodule "pack/plugins/start/fzf"]
+	path = pack/plugins/start/fzf
+	url = ssh://git@github.com/junegunn/fzf.git
+[submodule "pack/plugins/start/fzf.vim"]
+	path = pack/plugins/start/fzf.vim
+	url = ssh://git@github.com/junegunn/fzf.vim.git
