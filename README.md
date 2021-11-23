@@ -16,7 +16,6 @@ list of plugins:
 |---:|---|
 | [clever-f](https://github.com/rhysd/clever-f.vim)| extend `f`, `F`, `t` and `T` mappings for more convenience. |
 | [delimitMate](https://github.com/Raimondi/delimitMate)|provides automatic closing of quotes, parenthesis, brackets, etc.|
-| [fzf](https://github.com/junegunn/fzf)| fuzzy file finder. |
 | [vim-colors](https://github.com/ricalbr/vim-colors)|personalized, dark-code inspired colorscheme for vim.
 | [vim-commentary](https://github.com/tpope/vim-commentary)|Comment stuff out.|
 | [vim-cool](https://github.com/romainl/vim-cool)|disables search highlighting when you are done searching and re-enables it when you search again.|
