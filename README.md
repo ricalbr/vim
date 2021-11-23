@@ -16,15 +16,15 @@ list of plugins:
 |---:|---|
 | [clever-f](https://github.com/rhysd/clever-f.vim)| extend `f`, `F`, `t` and `T` mappings for more convenience. |
 | [delimitMate](https://github.com/Raimondi/delimitMate)|provides automatic closing of quotes, parenthesis, brackets, etc.|
+| [UltiSnips](https://github.com/SirVer/ultisnips)| snippet engine for vim.|
+| [vim-capslock](https://github.com/tpope/vim-capslock)| avoid CAPS-LOCK and toggle a temporary software caps lock.
 | [vim-colors](https://github.com/ricalbr/vim-colors)|personalized, dark-code inspired colorscheme for vim.
 | [vim-commentary](https://github.com/tpope/vim-commentary)|Comment stuff out.|
 | [vim-cool](https://github.com/romainl/vim-cool)|disables search highlighting when you are done searching and re-enables it when you search again.|
 | [vim-gitgutter](https://github.com/airblade/vim-gitgutter)|shows a git diff in the sign column.|
 | [vim-repeat](https://github.com/tpope/vim-repeat)| remaps the `.`-command to be used by in a way that plugins can tap into it.|
-| [vim-surround](https://github.com/tpope/vim-surround)|all about "surroundings": parentheses, brackets, quotes, XML tags, and more. |
 | [vim-snippets](https://github.com/honza/vim-snippets)| contains snippets files for various programming languages.|
-| [UltiSnips](https://github.com/SirVer/ultisnips)| snippet engine for vim.|
-| [vim-capslock](https://github.com/tpope/vim-capslock)| avoid CAPS-LOCK and toggle a temporary software caps lock.
+| [vim-surround](https://github.com/tpope/vim-surround)|all about "surroundings": parentheses, brackets, quotes, XML tags, and more. |
 
 ### bugs
 open a bug [here](https://github.com/ricalbr/vim/issues).
