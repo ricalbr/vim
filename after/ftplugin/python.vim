@@ -45,5 +45,5 @@ function! PyInclude(fname)
 endfunction
 
 " mappings
-nnoremap <F7> :update <CR>:!clear; python % <CR>
-inoremap <F7> <ESC> :update <CR>:!clear; python % <CR>
+nnoremap <F7> :update <CR>:exec '!python' shellescape(@%, 1)<CR>
+inoremap <F7> <ESC> :update <CR>:exec '!python' shellescape(@%, 1)<CR>
