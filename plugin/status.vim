@@ -45,7 +45,8 @@ set noshowmode
 set statusline=
 set statusline+=%0*\ %{ModeCurrent()}\                      " current mode
 set statusline+=%#LineNr#                                   " transparent line
-set statusline+=\ %<%{pathshorten(expand('%:~:p'))}\ %m%r%h%w\ |                         " file path, modified, readonly, helpfile, preview
+set statusline+=\ %<%{pathshorten(expand('%:~:p'))}         " filepath
+set statusline+=\ %m%r%h%w\ |                               " modified, readonly, helpfile, preview
 set statusline+=%=                                          " right side separator
 set statusline+=%y\ |                                       " filetype
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}  " encoding
