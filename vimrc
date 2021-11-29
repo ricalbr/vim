@@ -25,7 +25,7 @@ set directory=$XDG_CACHE_HOME/vim/swap   | call mkdir(&directory, 'p', 0700)
 set undodir=$XDG_CACHE_HOME/vim/undo     | call mkdir(&undodir,   'p', 0700)
 
 if !has('nvim') " Neovim has its own special location
-  set viminfo=$XDG_CACHE_HOME/vim/viminfo
+  set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
 endif
 " }}}
 
