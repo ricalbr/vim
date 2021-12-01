@@ -196,8 +196,8 @@ vnoremap > >gv
 vnoremap < <gv
 
 " move visual selection
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+xnoremap J :move '>+1<CR>gv=gv
+xnoremap K :move '<-2<CR>gv=gv
 
 " argslist navigation
 nnoremap [a :previous<CR>
