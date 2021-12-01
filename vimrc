@@ -56,14 +56,35 @@ set cindent
 set cinoptions=:.5s,>1s,p0,t0,(0,g2                     " :.5s = indent case statements 1/2 shiftwidth
 set cinwords=if,else,while,do,for,switch,case,class,try " which keywords should indent
 
-set list listchars=trail:·,tab:•-                       " use tab to navigate in list mode
-set fillchars+=vert:\▏,eob:\                            " requires a patched nerd font
+" listchars options
+set list
+set listchars=trail:·
+set listchars+=tab:•-                                   " (U+2022, UTF-8: E2 80 A2)
+set listchars+=nbsp:⦸                                   " (U+29B8, UTF-8: E2 A6 B8)
+set listchars+=precedes:«                               " (U+00BB, UTF-8: C2 BB)
+set listchars+=extends:»                                " (U+00AB, UTF-8: C2 AB)
+
+" fillchar options
+set fillchars=vert:│                                    " (U+2502, UTF-8: E2 94 82)
+set fillchars+=eob:\                                    " use space for end of buffer
+
 set wrap breakindent                                    " wrap long lines to the width set by tw
 set linebreak                                           " wrap words without break them
 set nrformats-=octal
 set splitright splitbelow
 set diffopt+=vertical
 silent! set splitvertical
+
+" folding options
+if has('folding')
+  if has('windows')
+    set fillchars+=diff:∙                               " (U+2219, UTF-8: E2 88 99)
+    set fillchars+=fold:·                               " (U+00B7, UTF-8: C2 B7)
+  endif
+
+  set foldmethod=manual
+  set foldlevelstart=99                                 " start unfolded
+endif
 
 " delete comment character when joining commented lines
 if v:version > 703 || v:version == 703 && has("patch541")
@@ -88,7 +109,12 @@ set noshowmode
 set lazyredraw
 set redrawtime=10000
 set synmaxcol=0
-set number relativenumber
+set number
+
+if exists('+relativenumber')
+  set relativenumber                                " show relative numbers in gutter
+endif
+
 set numberwidth=5
 set signcolumn=yes
 
