@@ -6,3 +6,7 @@ augroup Vimrc
   autocmd! bufwritepost vimrc source %
 augroup END
 
+set foldmethod=marker
+set foldmarker={{{,}}}
+set foldlevelstart=0
+set foldlevel=0

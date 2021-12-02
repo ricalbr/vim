@@ -158,12 +158,12 @@ augroup MyColors
 augroup END
 colorscheme dark
 
-" remember folds
-augroup rememberFold
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
+" " remember folds
+" augroup rememberFold
+"   autocmd!
+"   autocmd BufWinLeave * mkview
+"   autocmd BufWinEnter * silent! loadview
+" augroup END
 
 " remember cursor position
 augroup Operations
@@ -198,9 +198,9 @@ nnoremap <leader>%       :%s/\<<C-r>=expand("<cword>")<CR>\>/
 "   ,, trigger line completion
 "   ,. trigger keyword completion
 "   ,- trigger filename compeltion
-inoremap        ,,      <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
-inoremap        ,.      <C-n><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
-inoremap        ,-      <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
+inoremap ,, <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
+inoremap ,. <C-n><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
+inoremap ,- <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 
 " mapping C-S to save the file, in all the modes
 nnoremap <silent><C-s> :<C-u>update<CR>
