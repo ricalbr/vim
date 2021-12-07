@@ -15,3 +15,9 @@ noremap <buffer> <F9> :!gdb ./%:r<CR>
 
 " NB: to remove/change these mappings use :mapclear <buffer>
 "     see also :h map-<buffer>
+
+" Tabularize mapping
+if exists(":Tabularize")
+  nmap <Leader>a/ :Tabularize \/\/<CR>
+  vmap <Leader>a/ :Tabularize \/\/<CR>
+endif

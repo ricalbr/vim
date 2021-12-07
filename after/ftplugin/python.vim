@@ -49,3 +49,10 @@ endfunction
 " mappings
 nnoremap <F7> :update <CR>:exec '!python' shellescape(@%, 1)<CR>
 inoremap <F7> <ESC> :update <CR>:exec '!python' shellescape(@%, 1)<CR>
+
+" Tabularize mapping
+if exists(":Tabularize")
+  nmap <Leader>a# :Tabularize /#<CR>
+  vmap <Leader>a# :Tabularize /#<CR>
+endif
+

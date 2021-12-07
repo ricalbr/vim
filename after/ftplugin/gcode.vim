@@ -14,7 +14,8 @@ set textwidth=179
 " set comment string
 setlocal commentstring='\ %s
 
+" Tabularize mapping
 if exists(":Tabularize")
-  nmap <Leader>a" :Tabularize /"<CR>
-  vmap <Leader>a" :Tabularize /"<CR>
+  nmap <Leader>a' :Tabularize /'<CR>
+  vmap <Leader>a' :Tabularize /'<CR>
 endif
