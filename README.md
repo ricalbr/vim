@@ -16,6 +16,7 @@ list of plugins:
 |---:|---|
 | [clever-f](https://github.com/rhysd/clever-f.vim)| extend `f`, `F`, `t` and `T` mappings for more convenience. |
 | [delimitMate](https://github.com/Raimondi/delimitMate)|provides automatic closing of quotes, parenthesis, brackets, etc.|
+| [tabular](https://github.com/godlygeek/tabular)| easily align text.|
 | [UltiSnips](https://github.com/SirVer/ultisnips)| snippet engine for vim.|
 | [vim-capslock](https://github.com/tpope/vim-capslock)| avoid CAPS-LOCK and toggle a temporary software caps lock.
 | [vim-colors](https://github.com/ricalbr/vim-colors)|personalized, dark-code inspired colorscheme for vim.

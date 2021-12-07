@@ -261,7 +261,6 @@ inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
 " autoload functions mappings
-xnoremap <silent>al                 :<C-u>silent call align#Align()<CR>
 nnoremap <silent><leader>p          :call opener#OpenFileInPrevWindow()<CR>
 cnoremap <expr><CR>                 cmdline#AutoComplete()
 nnoremap <silent><expr> <Leader>h   wordshl#Highlighting()
