@@ -84,6 +84,19 @@ if has('folding')
 
   set foldmethod=manual
   set foldlevelstart=99                                 " start unfolded
+  set foldtext=MyFoldText()
+  " foldText() {{{
+  function MyFoldText()
+    let nucolwidth = &fdc + &number*&numberwidth
+    let winwd = winwidth(0) - nucolwidth - 2
+    let foldlinecount = foldclosedend(v:foldstart) - foldclosed(v:foldstart) + 1
+    let prefix = " "
+    let fdnfo = prefix . "[" . string(foldlinecount) . " lines]   "
+    let line =  strpart(getline(v:foldstart), 0 , winwd - len(fdnfo))
+    let fillcharcount = winwd - len(line) - len(fdnfo)
+    return line . repeat(" ",fillcharcount) . fdnfo
+  endfunction
+  " }}}
 endif
 
 " delete comment character when joining commented lines
