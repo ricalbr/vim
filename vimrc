@@ -84,9 +84,10 @@ if has('folding')
 
   set foldmethod=manual
   set foldlevelstart=99                                 " start unfolded
-  set foldtext=MyFoldText()
-  " foldText() {{{
-  function MyFoldText()
+  set foldtext=FoldText()
+
+  " foldText() function {{{
+  function FoldText()
     let nucolwidth = &fdc + &number*&numberwidth
     let winwd = winwidth(0) - nucolwidth - 2
     let foldlinecount = foldclosedend(v:foldstart) - foldclosed(v:foldstart) + 1
@@ -97,6 +98,7 @@ if has('folding')
     return line . repeat(" ",fillcharcount) . fdnfo
   endfunction
   " }}}
+
 endif
 
 " delete comment character when joining commented lines
