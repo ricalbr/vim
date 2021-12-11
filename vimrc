@@ -186,6 +186,17 @@ augroup Operations
   autocmd BufReadPost * call autocmdfunctions#LastPosition()
   autocmd BufWritePre * call autocmdfunctions#RmvTrailingSpaces()
 augroup END
+
+" Mark last edited file
+augroup VIMRC
+  autocmd!
+
+  autocmd   BufLeave   *.cpp   normal! mC
+  autocmd   BufLeave   *.py    normal! mP
+  autocmd   BufLeave   *.md    normal! mM
+  autocmd   BufLeave   *.txt   normal! mT
+  autocmd   BufLeave   vimrc   normal! mV
+augroup END
 " }}}
 
 " MAPPINGS {{{
@@ -262,10 +273,12 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " window management
-nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 6/5)<CR>
-nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 5/6)<CR>
+nnoremap <silent> <Leader>0 <C-w>=
+nnoremap <silent> <Leader>+ :vertical resize +10<CR>
+nnoremap <silent> <Leader>- :vertical resize -10<CR>
 
-" no arrow keys
+" no K or arrow keys
+nnoremap <K>     <NOP>
 nnoremap <Down>  <NOP>
 nnoremap <Up>    <NOP>
 nnoremap <Left>  <NOP>
