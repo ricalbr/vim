@@ -1,4 +1,4 @@
-" G-code"
+" G-code
 
 " basic settings
 set tabstop=4

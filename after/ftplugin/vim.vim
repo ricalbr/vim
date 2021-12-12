@@ -1,4 +1,10 @@
-set shiftwidth=2 tabstop=2 softtabstop=2 autoindent smartindent
+" vim
+
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+set autoindent
+set smartindent
 
 " Automatically source .vimrc on save
 augroup Vimrc
