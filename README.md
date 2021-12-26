@@ -18,7 +18,6 @@ list of plugins:
 | [delimitMate](https://github.com/Raimondi/delimitMate)|provides automatic closing of quotes, parenthesis, brackets, etc.|
 | [tabular](https://github.com/godlygeek/tabular)| easily align text.|
 | [UltiSnips](https://github.com/SirVer/ultisnips)| snippet engine for vim.|
-| [vim-capslock](https://github.com/tpope/vim-capslock)| avoid CAPS-LOCK and toggle a temporary software caps lock.
 | [vim-colors](https://github.com/ricalbr/vim-colors)|personalized, dark-code inspired colorscheme for vim.
 | [vim-commentary](https://github.com/tpope/vim-commentary)|Comment stuff out.|
 | [vim-cool](https://github.com/romainl/vim-cool)|disables search highlighting when you are done searching and re-enables it when you search again.|
