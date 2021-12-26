@@ -19,7 +19,7 @@ list of plugins:
 | [tabular](https://github.com/godlygeek/tabular)| easily align text.|
 | [UltiSnips](https://github.com/SirVer/ultisnips)| snippet engine for vim.|
 | [vim-colors](https://github.com/ricalbr/vim-colors)|personalized, dark-code inspired colorscheme for vim.
-| [vim-commentary](https://github.com/tpope/vim-commentary)|Comment stuff out.|
+| [vim-commentary](https://github.com/tpope/vim-commentary)|comment stuff out.|
 | [vim-cool](https://github.com/romainl/vim-cool)|disables search highlighting when you are done searching and re-enables it when you search again.|
 | [vim-gitgutter](https://github.com/airblade/vim-gitgutter)|shows a git diff in the sign column.|
 | [vim-repeat](https://github.com/tpope/vim-repeat)| remaps the `.`-command to be used by in a way that plugins can tap into it.|
