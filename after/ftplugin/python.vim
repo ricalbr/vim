@@ -18,19 +18,19 @@ set foldmethod=indent
 set foldlevel=99
 
 " compiler settings
-compiler pyunit
-set makeprg=python3\ %
+" compiler pylint
+" set makeprg=python3\ %
 
-augroup Linting
-    autocmd!
-    autocmd BufWritePost *.py silent make! <afile> | silent redraw!
-    autocmd QuickFixCmdPost [^l]* cwindow
-augroup END
+" augroup Linting
+"     autocmd!
+"     autocmd BufWritePost *.py silent make! <afile> | silent redraw!
+"     autocmd QuickFixCmdPost [^l]* cwindow
+" augroup END
 
 " include and define
 setlocal include=^\\s*\\(from\\\|import\\)\\s*\\zs\\(\\S\\+\\s\\{-}\\)*\\ze\\($\\\|\ as\\)
 setlocal define=^\\s*\\\\(def\\\|class\\)\\>
-" setlocal includeexpr=PyInclude(v:fname)
+setlocal includeexpr=PyInclude(v:fname)
 
 function! PyInclude(fname)
   let parts = split(a:fname, ' import ')
@@ -47,8 +47,8 @@ function! PyInclude(fname)
 endfunction
 
 " mappings
-nnoremap <F7> :update <CR>:exec '!python' shellescape(@%, 1)<CR>
-inoremap <F7> <ESC> :update <CR>:exec '!python' shellescape(@%, 1)<CR>
+nnoremap <F5> :update <CR>:exec '!python' shellescape(@%, 1)<CR>
+inoremap <F5> <ESC> :update <CR>:exec '!python' shellescape(@%, 1)<CR>
 
 " Tabularize mapping
 if exists(":Tabularize")
