@@ -3,10 +3,10 @@
 configuration for vim text editor.
 
 ### install
-in terminal:
+clone the repo
 ``` bash
-mkdir .vim
-git clone https://github.com/ricalbr/vim .vim
+mkdir ~/.vim
+git clone https://github.com/ricalbr/vim ~/.vim
 ```
 
 ### plugins
@@ -27,7 +27,7 @@ list of plugins:
 | [vim-surround](https://github.com/tpope/vim-surround)|all about "surroundings": parentheses, brackets, quotes, XML tags, and more. |
 
 ### bugs
-open a bug [here](https://github.com/ricalbr/vim/issues).
+open an issue [here](https://github.com/ricalbr/vim/issues).
 
 ---
 author: riccardo albiero albr.riccardo@gmail.com
