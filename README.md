@@ -5,8 +5,8 @@ configuration for vim text editor.
 ### install
 clone the repo
 ``` bash
-mkdir ~/.vim
-git clone https://github.com/ricalbr/vim ~/.vim
+mkdir ~/.config/vim
+git clone https://github.com/ricalbr/vim ~/.config/vim
 ```
 
 ### plugins
