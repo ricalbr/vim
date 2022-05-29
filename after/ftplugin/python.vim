@@ -1,8 +1,20 @@
 " python
 
 " add filetype specific plugins
+packadd vim-flake8
+  let g:flake8_show_in_gutter=1
+  let g:flake8_quickfix_height=3
+  " to use colors defined in the colorscheme
+  highlight link Flake8_Error      Error
+  highlight link Flake8_Warning    WarningMsg
+  highlight link Flake8_Complexity WarningMsg
+  highlight link Flake8_Naming     WarningMsg
+  highlight link Flake8_PyFlake    WarningMsg
+  " mapping
+  nnoremap <F3> :call flake8#Flake8()<CR>
+  autocmd BufWritePost *.py call flake8#Flake8()
 packadd python-syntax
-let g:python_highlight_all = 1
+  let g:python_highlight_all = 1
 
 " basic settings
 set tabstop=4
