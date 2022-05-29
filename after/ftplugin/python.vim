@@ -26,6 +26,7 @@ set autoindent
 set encoding=utf-8
 set fileformat=unix
 set textwidth=79
+set colorcolumn=80
 set foldmethod=indent
 set foldlevel=99
 
