@@ -25,8 +25,8 @@ set expandtab
 set autoindent
 set encoding=utf-8
 set fileformat=unix
-set textwidth=79
-set colorcolumn=80
+set textwidth=120
+set colorcolumn=121
 set foldmethod=indent
 set foldlevel=99
 
@@ -43,7 +43,7 @@ set foldlevel=99
 " include and define
 setlocal include=^\\s*\\(from\\\|import\\)\\s*\\zs\\(\\S\\+\\s\\{-}\\)*\\ze\\($\\\|\ as\\)
 setlocal define=^\\s*\\\\(def\\\|class\\)\\>
-setlocal includeexpr=PyInclude(v:fname)
+" setlocal includeexpr=PyInclude(v:fname)
 
 function! PyInclude(fname)
   let parts = split(a:fname, ' import ')
