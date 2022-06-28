@@ -12,7 +12,6 @@ packadd vim-flake8
   highlight link Flake8_PyFlake    WarningMsg
   " mapping
   nnoremap <F3> :call flake8#Flake8()<CR>
-  autocmd BufWritePost *.py call flake8#Flake8()
 packadd python-syntax
   let g:python_highlight_all = 1
 
